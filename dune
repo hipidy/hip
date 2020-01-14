@@ -1,0 +1,11 @@
+(dirs lib native)
+(include_subdirs unqualified)
+(library
+ (name hiplib)
+ (modules date yesterday_impl yesterday  tomorrow)
+  (libraries unix))
+
+(executable
+( modules hip)
+ (name hip)
+  (libraries hiplib))
