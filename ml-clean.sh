@@ -1,9 +1,14 @@
 
 
-for f in $(find . -iname '*.ml'); do
-  [ -f "$f" ] || continue
+for d in native lib ; do
+  [ -d "$d" ] || continue
 
-  echo delete $f
-  rm -f $f
+  for f in $(find $d -iname '*.ml'); do
+    [ -f "$f" ] || continue
+
+    echo delete $f
+    rm -f $f
+  done
+
 done
 

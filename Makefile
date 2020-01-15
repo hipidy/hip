@@ -1,13 +1,27 @@
 .PHONY: native clean
 
-default:
-	@@echo "use 'make native'"
+SCM2ML=~/tools/utils/scm2ml
+
+SCMS = $(wildcard lib/*.scm) $(wildcard native/*.scm)
+
+MLS = $(SCMS:.scm=.ml)
+
+%.ml: %.scm
+	$(SCM2ML)  $< > $@
 
 
-native:
-	sh scm-conv.sh
+default: native
+
+native: $(MLS)
+	#sh scm-conv.sh
 	dune build 
 	dune exec ./hip.exe
 
 clean:
 	dune clean
+
+distclean:
+	rm -rf _esy
+	rm -rf esy.lock
+	rm -rf node_modules
+	rm -rf _build

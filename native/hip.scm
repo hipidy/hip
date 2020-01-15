@@ -1,2 +1,2 @@
-(Printf.printf "Yay this was yesterday %f"
+(Printf.printf "Yay - this was yesterday %f"
  (Hiplib.Yesterday.yesterday ()))
