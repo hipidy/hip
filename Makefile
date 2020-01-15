@@ -18,6 +18,7 @@ native: $(MLS)
 	dune exec ./hip.exe
 
 clean:
+	sh ./ml-clean.sh
 	dune clean
 
 distclean:
