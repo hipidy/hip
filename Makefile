@@ -5,7 +5,8 @@ default:
 
 
 native:
-	dune build
+	sh scm-conv.sh
+	dune build 
 	dune exec ./hip.exe
 
 clean:

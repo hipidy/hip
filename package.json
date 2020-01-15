@@ -1,20 +1,10 @@
 {
-  "name": "hip",
+  "name": "@hipidy/hip",
   "version": "0.1.0",
   "description": "hip - A Hipidy Project",
+  "repository": "https://github.com/hipidy/hip",
+  "author": "Hipidy <ben@hipidy.com>",
   "license": "MIT",
-  "esy": {
-    "build": "refmterr dune build -p #{self.name}",
-    "NOTE": "Optional release Section. Customizes result of `esy release`",
-    "release": {
-      "bin": [
-        "hip"
-      ]
-    },
-    "buildEnv": {
-      "ODOC_SYNTAX": "re"
-    }
-  },
   "scripts": {
     "test": "esy x Hello",
     "doc": "esy dune build @doc"
